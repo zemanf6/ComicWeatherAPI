@@ -39,6 +39,7 @@ namespace ComicWeatherApi
             }
 
             currentNumber = comic.Num;
+            numberImage.Text = currentNumber.ToString();
 
             var uriSource = new Uri(comic.Img, UriKind.Absolute);
             comicImage.Source = new BitmapImage(uriSource);
