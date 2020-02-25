@@ -4,8 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ComicWeatherApi"
-        mc:Ignorable="d"
-        Title="Comic" Height="350" Width="600">
+        mc:Ignorable="d" FontSize="22" Loaded="Window_Loaded"
+        Title="Comic" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
@@ -13,11 +13,13 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button x:Name="previousImageButton" Padding="15" Margin="15">Previous</Button>
+            <Button x:Name="previousImageButton" Padding="15" Margin="15" Click="PreviousImageButton_Click">Previous</Button>
             <Button x:Name="sunInformationButton" Padding="15" Margin="15">Sun information</Button>
-            <Button x:Name="nextImageButton" Padding="15" Margin="15">Next</Button>
+            <Button x:Name="nextImageButton" Padding="15" Margin="15" Click="NextImageButton_Click">Next</Button>
+            <TextBlock x:Name="numberImage" Padding="15" Margin="15" FontSize="12"></TextBlock>
+            
         </StackPanel>
 
-        <Image Grid.Row="1" x:Name="comicImage" />
+        <Image Grid.Row="1" x:Name="comicImage" Margin="20" />
     </Grid>
 </Window>

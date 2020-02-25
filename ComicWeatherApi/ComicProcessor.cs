@@ -9,8 +9,9 @@ namespace ComicWeatherApi
 {
     public class ComicProcessor
     {
-        public async Task LoadComic(int comicNumber = 0)
+        public static async Task<ComicModel> LoadComic(int comicNumber = 0)
         {
+
             string url = "";
 
             if (comicNumber > 0)
@@ -24,7 +25,16 @@ namespace ComicWeatherApi
 
             using (HttpResponseMessage response = await ApiHelper.ApiClient.GetAsync(url))
             {
-                //18:09
+                if (response.IsSuccessStatusCode)
+                {
+                    ComicModel comic = await response.Content.ReadAsAsync<ComicModel>();
+
+                    return comic;
+                }
+                else
+                {
+                    throw new Exception(response.ReasonPhrase);
+                }
             }
         }
     }
