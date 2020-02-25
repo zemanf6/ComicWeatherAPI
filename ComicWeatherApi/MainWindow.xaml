@@ -5,8 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ComicWeatherApi"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Comic" Height="350" Width="600">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="previousImageButton" Padding="15" Margin="15">Previous</Button>
+            <Button x:Name="sunInformationButton" Padding="15" Margin="15">Sun information</Button>
+            <Button x:Name="nextImageButton" Padding="15" Margin="15">Next</Button>
+        </StackPanel>
+
+        <Image Grid.Row="1" x:Name="comicImage" />
     </Grid>
 </Window>
