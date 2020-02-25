@@ -23,6 +23,7 @@ namespace ComicWeatherApi
         public MainWindow()
         {
             InitializeComponent();
+            //fdfdf
         }
     }
 }
