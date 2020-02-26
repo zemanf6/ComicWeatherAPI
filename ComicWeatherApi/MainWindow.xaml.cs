@@ -31,7 +31,17 @@ namespace ComicWeatherApi
 
         private async Task LoadImage(int imageNumber = 0)
         {
-            var comic = await ComicProcessor.LoadComic(imageNumber);
+            string url;
+            if (imageNumber > 0)
+            {
+                url = $"https://xkcd.com/{imageNumber}/info.0.json";
+            }
+            else
+            {
+                url = $"https://xkcd.com/info.0.json";
+            }
+
+            var comic = await Processor.Load<ComicModel>(url);
 
             if (imageNumber == 0)
             {

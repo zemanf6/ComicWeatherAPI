@@ -64,9 +64,8 @@
     <Compile Include="Suninfo.xaml.cs">
       <DependentUpon>Suninfo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SunModel.cs" />
-    <Compile Include="SunProcessor.cs" />
-    <Compile Include="SunResultModel.cs" />
+    <Compile Include="Models\SunModel.cs" />
+    <Compile Include="Models\SunResultModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -76,8 +75,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ComicModel.cs" />
-    <Compile Include="ComicProcessor.cs" />
+    <Compile Include="Models\ComicModel.cs" />
+    <Compile Include="Processor.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -114,5 +113,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -26,10 +26,13 @@ namespace ComicWeatherApi
 
         private async void LoadSunInfo_Click(object sender, RoutedEventArgs e)
         {
-            var sunInfo = await SunProcessor.LoadSunInformation();
+            var sunInfo =
+                await Processor.Load<SunResultModel>(
+                    "https://api.sunrise-sunset.org/json?lat=49.222418&lng=17.677359&date=today");
+            
 
-            SunriseText.Text = $"Sunrise is at {sunInfo.Sunrise.ToLocalTime().ToShortTimeString()}";
-            SunsetText.Text = $"Sunset is at {sunInfo.Sunset.ToLocalTime().ToShortTimeString()}";
+            SunriseText.Text = $"Sunrise is at {sunInfo.Results.Sunrise.ToLocalTime().ToShortTimeString()}";
+            SunsetText.Text = $"Sunset is at {sunInfo.Results.Sunset.ToLocalTime().ToShortTimeString()}";
         }
     }
 }

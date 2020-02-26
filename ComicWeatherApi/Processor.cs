@@ -7,21 +7,17 @@ using System.Threading.Tasks;
 
 namespace ComicWeatherApi
 {
-    public class ComicProcessor
+    public class Processor
     {
-        public static async Task<ComicModel> LoadComic(int comicNumber = 0)
+        public static async Task<T> Load<T>(string url)
         {
-            string url = "";
-
-            url = comicNumber > 0 ? $"https://xkcd.com/{ comicNumber }/info.0.json" : $"https://xkcd.com/info.0.json";
-
             using (HttpResponseMessage response = await ApiHelper.ApiClient.GetAsync(url))
             {
                 if (response.IsSuccessStatusCode)
                 {
-                    ComicModel comic = await response.Content.ReadAsAsync<ComicModel>();
+                    T model = await response.Content.ReadAsAsync<T>();
 
-                    return comic;
+                    return model;
                 }
                 else
                 {
