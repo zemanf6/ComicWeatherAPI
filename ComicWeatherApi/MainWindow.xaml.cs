@@ -79,5 +79,12 @@ namespace ComicWeatherApi
                 }
             }
         }
+
+        private void sunInformationButton_Click(object sender, RoutedEventArgs e)
+        {
+            Suninfo suninfo = new Suninfo();
+
+            suninfo.Show();
+        }
     }
 }
