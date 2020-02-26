@@ -9,7 +9,7 @@ namespace ComicWeatherApi
 {
     public class Processor
     {
-        public static async Task<T> Load<T>(string url)
+        public static async Task<T> Load<T>(string url) where T: class, new()
         {
             using (HttpResponseMessage response = await ApiHelper.ApiClient.GetAsync(url))
             {
